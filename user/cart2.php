@@ -81,7 +81,7 @@ if (is_array($_COOKIE['item']))  //this is for chec cookies are available or nor
 
                             </td>
                             <td class="cart_price">
-                                <p>$<?php echo $values11[2]; ?></p>
+                                <p>INR <?php echo $values11[2]; ?></p>
                             </td>
                             <td class="cart_quantity">
                                 <div class="cart_quantity_button">

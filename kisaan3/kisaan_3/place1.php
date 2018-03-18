@@ -47,15 +47,17 @@ include 'header.php';
             
         <div id="place1">
             <?php 
-  $con= mysqli_connect("localhost","root","" ,"scart")or die(mysqli_error($con));
+  $con= mysqli_connect("localhost","root","" ,"scart2")or die(mysqli_error($con));
  
  if(isset($_POST['submit1'])){
-      $r="select soil from states where state = '$_POST[state]'";
-  $res = mysqli_query( $con ,$r);
-     
-     while($row = mysqli_fetch_array($res))
+      $r="select soil from state where state = '$_POST[state]'";
+  $r_es = mysqli_query( $con ,$r);
+    ?> <h1 style="color:white; text-align: center">result:</h1><h1 style="color:white;">
+         <?php echo"Soil of ur area is"." " ;?>
+    <?php while($row = mysqli_fetch_array($r_es))
              {
-               ?>  <h1 style="color:white; text-align: center">result:</h1><h1 style="color:white;"><?php echo"Soil of ur area is"." " ;
+               
+               
                   echo $row['soil'];?></h1><?php
                 }
     }
