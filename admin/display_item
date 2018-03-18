@@ -1,0 +1,58 @@
+<?php
+session_start();
+    include "header.php";
+    include "menu.php";
+    
+    $link = mysqli_connect("localhost", "root", "");
+mysqli_select_db($link, "scart2");
+?>
+
+        <div class="grid_10">
+            <div class="box round first">
+                <h2>
+                    Product Sales</h2>
+                <div class="block">
+                  <?php  
+                    $res = mysqli($link , "select * from product")
+                    echo "<table>";
+                    echo "<tr>";
+                        echo "<th>" ; echo "product image " ; echo "</tr>";  
+                        echo "<th>" ; echo "product name " ; echo "</tr>";  
+                        echo "<th>" ; echo "product price " ; echo "</tr>";  
+                        echo "<th>" ; echo "product quantity " ; echo "</tr>";  
+                        echo "<th>" ; echo "product category " ; echo "</tr>";  
+
+                    echo "</tr>"
+                    echo "</table>";
+
+
+                    while($row = mysqli_fetch_array($res))
+                    {
+
+                        echo "<tr>";
+
+                            echo "<td>" ; ?> <img src= "</php echo $row["product_image"] ; ?> height="100" width="100" > <?php echo "</td>";
+                            echo "<td>" ; echo "</td>"; 
+                            echo "<td>" ; echo "</td>"; 
+                            echo "<td>" ; echo "</td>"; 
+                            echo "<td>" ; echo "</td>"; 
+
+
+                        echo "</tr>"
+
+
+
+
+
+                    }
+
+
+
+                    ?>
+                </div>
+            </div>
+        </div>  
+  <?php          
+    include "footer.php";
+?>
+      
